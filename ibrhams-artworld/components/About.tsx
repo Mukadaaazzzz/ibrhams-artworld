@@ -48,7 +48,8 @@ export default function About() {
 
   return (
     <section
-      className="relative w-full overflow-hidden"
+      id="about"
+      className="relative w-full overflow-hidden scroll-mt-20"
       style={{ background: "#FAFAF8", fontFamily: "'Jost', sans-serif" }}
     >
       {/* BG */}
@@ -323,7 +324,7 @@ export default function About() {
             Ready to start a project?
           </p>
           <a
-            href="/contact"
+            href="/#contact"
             className="inline-flex items-center gap-3 uppercase font-light px-6 py-3 transition-all duration-300 hover:gap-5"
             style={{
               fontSize: "11px",

@@ -101,43 +101,35 @@ export default function GalleryPreview() {
         </div>
 
         {/* Grid — 4 cols desktop, 2 mobile */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-black/[0.06]">
-          {featuredItems.map((item, i) => {
-            // Make first and last items taller for visual interest
-            const isTall = i === 0 || i === 5;
-            return (
-              <button
-                key={item.src}
-                onClick={() => setActive(item)}
-                className={[
-                  "group relative overflow-hidden bg-black/[0.02] cursor-pointer",
-                  isTall ? "md:row-span-2" : "",
-                ].join(" ")}
-                style={{ aspectRatio: isTall ? "auto" : "1/1", minHeight: isTall ? "360px" : "200px" }}
-              >
-                <Image
-                  src={item.src}
-                  alt={item.label}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                />
-                {/* Hover overlay */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"
-                  style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55), transparent)" }}
-                >
-                  <p
-                    className="text-white uppercase tracking-widest font-light"
-                    style={{ fontSize: "9px" }}
-                  >
-                    {item.label}
-                  </p>
-                </div>
-              </button>
-            );
-          })}
-        </div>
+<div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-black/[0.06]">
+  {featuredItems.map((item, i) => (
+    <button
+      key={item.src}
+      onClick={() => setActive(item)}
+      className="group relative overflow-hidden bg-black/[0.02] cursor-pointer"
+      style={{ aspectRatio: "1/1" }}
+    >
+      <Image
+        src={item.src}
+        alt={item.label}
+        fill
+        className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+        sizes="(max-width: 768px) 50vw, 25vw"
+      />
+      <div
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"
+        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55), transparent)" }}
+      >
+        <p
+          className="text-white uppercase tracking-widest font-light"
+          style={{ fontSize: "9px" }}
+        >
+          {item.label}
+        </p>
+      </div>
+    </button>
+  ))}
+</div>
 
         {/* Footer */}
         <div className="mt-10 flex items-center justify-between flex-wrap gap-4">

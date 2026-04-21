@@ -6,52 +6,73 @@ const services = [
   {
     num: "01",
     slug: "portrait-painting",
-    title: "Portrait Painting",
-    desc: "Custom portraits — individuals, families, couples, pets. Oil, acrylic, or charcoal. Commissions taken from photo reference or live sitting.",
-    tags: ["Oil", "Acrylic", "Charcoal", "Commission"],
+    title: "Art & Portraiture",
+    desc: "Custom portraits, original paintings, and commissioned artwork — individuals, families, pets, or abstract compositions. Oil, acrylic, charcoal, or mixed media.",
+    tags: ["Oil Painting", "Acrylic", "Charcoal", "Mixed Media", "Commission"],
   },
   {
     num: "02",
-    slug: "interior-art-direction",
-    title: "Interior Art Direction",
-    desc: "Helping homes and spaces find their visual identity — wall colour, art placement, custom canvases, and surface treatments that tie a room together.",
-    tags: ["Residential", "Colour Consult", "Wall Art", "Styling"],
+    slug: "professional-painting",
+    title: "Professional Painting",
+    desc: "High-standard interior and exterior painting for residential, commercial, and industrial spaces. Flawless finishes, proper surface preparation, and durable results.",
+    tags: ["Interior", "Exterior", "Industrial", "Commercial", "Residential"],
   },
   {
     num: "03",
-    slug: "exterior-facade-work",
-    title: "Exterior & Facade Work",
-    desc: "Painting, finishing, and decorative treatments for building exteriors, gates, compound walls, and outdoor features. Built to handle Lagos weather.",
-    tags: ["Facade", "Gates", "Compound Walls", "Weatherproof"],
+    slug: "screeding-floor-levelling",
+    title: "Screeding & Floor Levelling",
+    desc: "Professional floor screeding, self-levelling compounds, and substrate preparation. Perfectly flat, smooth surfaces ready for tiling, polishing, or floor finishes.",
+    tags: ["Floor Screed", "Self-Levelling", "Substrate Prep", "Concrete Finish"],
   },
   {
     num: "04",
-    slug: "decorative-finishing-plasterwork",
-    title: "Decorative Finishing & Plasterwork",
-    desc: "Textured wall finishes, Venetian plaster, stucco, and ornamental plasterwork for spaces that want more than just paint.",
-    tags: ["Venetian Plaster", "Texture", "Ornamental", "Luxury Finish"],
+    slug: "surface-treatment",
+    title: "Surface Treatment",
+    desc: "Comprehensive surface preparation and finishing — cleaning, priming, sealing, and protective coatings for walls, floors, concrete, metal, and wood surfaces.",
+    tags: ["Priming", "Sealing", "Protective Coatings", "Restoration"],
   },
   {
     num: "05",
-    slug: "digital-illustration-design",
-    title: "Digital Illustration & Design",
-    desc: "Custom digital artwork — prints, brand visuals, event graphics, social content. Ready for screen or production print.",
-    tags: ["Print-Ready", "Branding", "Social", "Digital"],
+    slug: "decorative-finishing-plasterwork",
+    title: "Decorative Finishing & Plasterwork",
+    desc: "Textured wall finishes, Venetian plaster, stucco, polished plaster, and ornamental plasterwork for spaces that demand character and craftsmanship.",
+    tags: ["Venetian Plaster", "Texture", "Stucco", "Ornamental", "Luxury Finish"],
   },
   {
     num: "06",
+    slug: "interior-art-direction",
+    title: "Interior Art Direction",
+    desc: "Holistic space curation — wall colour consultation, art placement, custom canvases, surface treatments, and visual identity that ties every room together.",
+    tags: ["Colour Consult", "Wall Art", "Styling", "Space Curation"],
+  },
+  {
+    num: "07",
+    slug: "exterior-facade-work",
+    title: "Exterior & Facade Work",
+    desc: "Weather-resistant painting, finishing, and decorative treatments for building exteriors, gates, compound walls, and outdoor architectural features.",
+    tags: ["Facade", "Gates", "Compound Walls", "Weatherproof"],
+  },
+  {
+    num: "08",
     slug: "paint-production",
-    title: "Paint Production",
-    desc: "Custom paint mixing and colour matching for residential, commercial, and industrial projects. The right colour, made from scratch.",
+    title: "Paint Production & Colour Matching",
+    desc: "Custom paint mixing and precise colour matching for any project — residential, commercial, or industrial. The exact colour you envision, made from scratch.",
     tags: ["Custom Mix", "Colour Match", "Bulk Supply", "Commercial"],
+  },
+  {
+    num: "09",
+    slug: "digital-illustration-design",
+    title: "Digital Illustration & Design",
+    desc: "Custom digital artwork — prints, brand visuals, event graphics, and social content. Ready for screen or professional print production.",
+    tags: ["Print-Ready", "Branding", "Social Content", "Digital Art"],
   },
 ];
 
 export default function ProjectsPreview() {
   return (
     <section
-      className="relative w-full overflow-hidden bg-white"
-      style={{ fontFamily: "'Jost', sans-serif" }}
+      className="relative w-full overflow-hidden"
+      style={{ background: "#FAFAF8", fontFamily: "'Jost', sans-serif" }}
     >
       {/* SVG background */}
       <svg
@@ -59,10 +80,16 @@ export default function ProjectsPreview() {
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="xMidYMid slice"
       >
-        <path d="M -10 80 Q 60 40 140 90 Q 200 130 160 160" fill="none" stroke="#e4e0db" strokeWidth="18" strokeLinecap="round" opacity="0.6"/>
-        <path d="M -10 80 Q 60 40 140 90 Q 200 130 160 160" fill="none" stroke="#ece9e4" strokeWidth="8" strokeLinecap="round" opacity="0.7"/>
-        <path d="M 105% 85% Q 88% 92% 80% 80% Q 72% 68% 84% 60%" fill="none" stroke="#e4e0db" strokeWidth="14" strokeLinecap="round" opacity="0.5"/>
-        <path d="M 105% 85% Q 88% 92% 80% 80% Q 72% 68% 84% 60%" fill="none" stroke="#ece9e4" strokeWidth="6" strokeLinecap="round" opacity="0.6"/>
+        <defs>
+          <pattern id="services-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+            <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(0,0,0,0.03)" strokeWidth="0.5" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#services-grid)" />
+        <path d="M -10 80 Q 60 40 140 90 Q 200 130 160 160" fill="none" stroke="#e4e0db" strokeWidth="18" strokeLinecap="round" opacity="0.5"/>
+        <path d="M -10 80 Q 60 40 140 90 Q 200 130 160 160" fill="none" stroke="#ece9e4" strokeWidth="8" strokeLinecap="round" opacity="0.6"/>
+        <path d="M 105% 85% Q 88% 92% 80% 80% Q 72% 68% 84% 60%" fill="none" stroke="#e4e0db" strokeWidth="14" strokeLinecap="round" opacity="0.4"/>
+        <path d="M 105% 85% Q 88% 92% 80% 80% Q 72% 68% 84% 60%" fill="none" stroke="#ece9e4" strokeWidth="6" strokeLinecap="round" opacity="0.5"/>
         <circle cx="100%" cy="0" r="180" fill="none" stroke="#ece8e2" strokeWidth="0.8"/>
         <circle cx="100%" cy="0" r="240" fill="none" stroke="#f0ece7" strokeWidth="0.6"/>
         <circle cx="100%" cy="0" r="300" fill="none" stroke="#f2efe9" strokeWidth="0.5"/>
@@ -86,79 +113,150 @@ export default function ProjectsPreview() {
         <line x1="3%" y1="20%" x2="3%" y2="80%" stroke="#f2efea" strokeWidth="0.6"/>
       </svg>
 
-      {/* Content */}
-      <div className="relative max-w-[900px] mx-auto px-10 py-24">
+      <div className="relative max-w-[1000px] mx-auto px-6 md:px-10 py-20 md:py-24">
 
-        <p className="text-[10px] tracking-[0.35em] uppercase font-light text-black/35 mb-5">
-          What I do
-        </p>
+        {/* Eyebrow */}
+        <div className="flex items-center gap-4 mb-8">
+          <p
+            className="text-[10px] tracking-[0.35em] uppercase font-light shrink-0"
+            style={{ color: "rgba(0,0,0,0.28)" }}
+          >
+            What I do
+          </p>
+          <div className="flex-1 h-px" style={{ background: "rgba(0,0,0,0.07)" }} />
+        </div>
 
-        <h2
-          className="font-light leading-[1.05] mb-14 text-black"
-          style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(38px, 5vw, 60px)",
-          }}
-        >
-          Art, space &amp; surface —<br />
-          <em className="italic text-black/30">from the wall out</em>
-        </h2>
+        {/* Heading */}
+        <div className="mb-16">
+          <h2
+            className="font-light leading-[1.1] text-black mb-4"
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(38px, 5vw, 64px)",
+            }}
+          >
+            Art, space &amp; surface —<br />
+            <em className="italic" style={{ color: "rgba(0,0,0,0.25)" }}>
+              from the wall out
+            </em>
+          </h2>
+          <div className="w-12 h-px" style={{ background: "#C9A84C" }} />
+        </div>
 
-        <div className="border-t border-black/[0.08]">
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px"
+          style={{ background: "rgba(0,0,0,0.06)" }}>
           {services.map((s) => (
             <Link
               key={s.num}
               href={"/projects/" + s.slug}
-              className="group flex items-start gap-8 py-7 border-b border-black/[0.07] transition-colors duration-300 hover:bg-black/[0.015]"
+              className="group relative px-7 py-8 transition-all duration-300"
+              style={{ background: "#FAFAF8", textDecoration: "none" }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = "#fff")}
+              onMouseLeave={(e) => (e.currentTarget.style.background = "#FAFAF8")}
             >
+              {/* Gold top bar */}
+              <div
+                className="absolute top-0 left-0 right-0 h-[2px] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-400"
+                style={{ background: "#C9A84C" }}
+              />
+
+              {/* Number */}
               <span
-                className="min-w-[28px] pt-1 text-[11px] font-light text-black/25 transition-colors duration-300 group-hover:text-black/50"
-                style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                className="block mb-5 text-[11px] font-light tracking-wider"
+                style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  color: "rgba(0,0,0,0.2)",
+                }}
               >
                 {s.num}
               </span>
 
-              <div className="flex-1">
-                <p
-                  className="font-light mb-2 text-black transition-all duration-300 group-hover:tracking-wide"
-                  style={{
-                    fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "clamp(20px, 2.5vw, 26px)",
-                  }}
-                >
-                  {s.title}
-                </p>
-                <p className="text-[13px] font-light leading-relaxed max-w-[540px] text-black/50">
-                  {s.desc}
-                </p>
-                <div className="flex flex-wrap gap-1.5 mt-3">
-                  {s.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="text-[9px] tracking-[0.14em] uppercase font-light text-black/35 border border-black/10 px-2.5 py-0.5"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
+              {/* Title */}
+              <h3
+                className="font-light mb-3 text-black transition-all duration-300 group-hover:tracking-wide"
+                style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "clamp(18px, 2vw, 22px)",
+                }}
+              >
+                {s.title}
+              </h3>
+
+              {/* Desc */}
+              <p
+                className="text-[12px] font-light leading-relaxed mb-5"
+                style={{ color: "rgba(0,0,0,0.52)" }}
+              >
+                {s.desc}
+              </p>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-1.5 mb-5">
+                {s.tags.slice(0, 3).map((t) => (
+                  <span
+                    key={t}
+                    className="text-[8px] tracking-[0.12em] uppercase font-light px-2 py-0.5"
+                    style={{
+                      color: "rgba(0,0,0,0.38)",
+                      border: "1px solid rgba(0,0,0,0.08)",
+                    }}
+                  >
+                    {t}
+                  </span>
+                ))}
+                {s.tags.length > 3 && (
+                  <span
+                    className="text-[8px] tracking-[0.12em] uppercase font-light px-2 py-0.5"
+                    style={{
+                      color: "rgba(0,0,0,0.28)",
+                      border: "1px solid rgba(0,0,0,0.06)",
+                    }}
+                  >
+                    +{s.tags.length - 3}
+                  </span>
+                )}
               </div>
 
-              <span className="text-base pt-1 text-black/20 transition-all duration-300 group-hover:translate-x-1.5 group-hover:text-black/60">
-                →
-              </span>
+              {/* Bottom CTA line */}
+              <div
+                className="flex items-center gap-2 pt-4 border-t transition-all duration-300 group-hover:gap-3"
+                style={{ borderColor: "rgba(0,0,0,0.06)" }}
+              >
+                <span
+                  className="text-[9px] uppercase tracking-[0.2em] font-light"
+                  style={{ color: "rgba(0,0,0,0.28)" }}
+                >
+                  Learn more
+                </span>
+                <span
+                  className="text-sm transition-transform duration-300 group-hover:translate-x-1"
+                  style={{ color: "rgba(0,0,0,0.22)" }}
+                >
+                  &#8594;
+                </span>
+              </div>
             </Link>
           ))}
         </div>
 
-        <div className="mt-14 flex items-center justify-between">
-          <p className="text-[10px] tracking-[0.22em] uppercase font-light text-black/28">
-            Available for commissions
+        {/* Footer CTA */}
+        <div
+          className="mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+          style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}
+        >
+          <p
+            className="text-[10px] tracking-[0.22em] uppercase font-light"
+            style={{ color: "rgba(0,0,0,0.28)" }}
+          >
+            Available for commissions &amp; consultations
           </p>
           <Link
             href="/projects"
-            className="flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase font-light text-black/40 hover:text-black transition-all duration-300"
+            className="group inline-flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase font-light transition-all duration-300 hover:gap-4"
+            style={{ color: "#C9A84C" }}
           >
-            View all work →
+            View all work &#8594;
           </Link>
         </div>
       </div>

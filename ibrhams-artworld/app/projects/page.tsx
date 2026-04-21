@@ -26,7 +26,14 @@ export default function ProjectsPage() {
       </svg>
 
       <div className="relative max-w-[960px] mx-auto px-10 pt-40 pb-32">
-
+       <Link
+    href="/"
+    className="inline-flex items-center gap-2 mb-16 group"
+    style={{ color: "rgba(0,0,0,0.35)" }}
+  >
+    <span className="transition-transform duration-300 group-hover:-translate-x-1">&#8592;</span>
+    <span className="text-[10px] uppercase tracking-[0.22em] font-light">Back to home</span>
+  </Link>
         <p className="text-[10px] tracking-[0.35em] uppercase text-black/35 font-light mb-6">
           All Work
         </p>
@@ -43,9 +50,10 @@ export default function ProjectsPage() {
         </h1>
 
         <p className="text-[14px] font-light text-black/50 leading-relaxed max-w-[520px] mb-20">
-          Six disciplines. One consistent belief — that art applied with intention
-          transforms not just walls, but the way people feel inside a space.
-          Browse the work below, or click through to read the full story of each.
+          Nine disciplines. One consistent belief — that art and craft applied
+          with intention transforms not just walls, but the way people feel
+          inside a space. Browse the work below, or click through to read
+          the full story of each.
         </p>
 
         <div className="border-t border-black/[0.08]">
@@ -103,7 +111,7 @@ export default function ProjectsPage() {
                   {p.year}
                 </span>
                 <span className="text-black/20 text-base group-hover:translate-x-1.5 group-hover:text-black/60 transition-all duration-300 mt-2">
-                  →
+                  &#8594;
                 </span>
               </div>
             </Link>

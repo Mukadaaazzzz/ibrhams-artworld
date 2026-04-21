@@ -117,17 +117,12 @@ export default function Hero() {
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="/projects"
+            href="/gallery"
             className="px-9 py-[13px] bg-white text-black rounded-full text-[11px] font-light tracking-[0.12em] uppercase hover:scale-[1.04] hover:bg-gray-100 transition-all duration-300"
           >
-            View Projects
+            View Gallery
           </a>
-          <a
-            href="/case-studies"
-            className="px-9 py-[13px] border border-white/40 rounded-full text-[11px] font-light tracking-[0.12em] uppercase hover:bg-white hover:text-black hover:scale-[1.04] transition-all duration-300"
-          >
-            Case Studies
-          </a>
+         
         </div>
       </div>
 
