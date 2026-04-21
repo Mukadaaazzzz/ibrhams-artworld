@@ -5,31 +5,31 @@ import Link from "next/link";
 const services = [
   {
     num: "01",
-    slug: "wall-murals",
-    title: "Wall Murals",
-    desc: "Large-scale hand-painted murals for homes, businesses, estates, and public spaces. Interior and exterior. I work with the architecture, not against it.",
-    tags: ["Interior", "Exterior", "Commercial", "Residential"],
-  },
-  {
-    num: "02",
     slug: "portrait-painting",
     title: "Portrait Painting",
     desc: "Custom portraits — individuals, families, couples, pets. Oil, acrylic, or charcoal. Commissions taken from photo reference or live sitting.",
     tags: ["Oil", "Acrylic", "Charcoal", "Commission"],
   },
   {
-    num: "03",
+    num: "02",
     slug: "interior-art-direction",
     title: "Interior Art Direction",
     desc: "Helping homes and spaces find their visual identity — wall colour, art placement, custom canvases, and surface treatments that tie a room together.",
     tags: ["Residential", "Colour Consult", "Wall Art", "Styling"],
   },
   {
-    num: "04",
+    num: "03",
     slug: "exterior-facade-work",
     title: "Exterior & Facade Work",
     desc: "Painting, finishing, and decorative treatments for building exteriors, gates, compound walls, and outdoor features. Built to handle Lagos weather.",
     tags: ["Facade", "Gates", "Compound Walls", "Weatherproof"],
+  },
+  {
+    num: "04",
+    slug: "decorative-finishing-plasterwork",
+    title: "Decorative Finishing & Plasterwork",
+    desc: "Textured wall finishes, Venetian plaster, stucco, and ornamental plasterwork for spaces that want more than just paint.",
+    tags: ["Venetian Plaster", "Texture", "Ornamental", "Luxury Finish"],
   },
   {
     num: "05",
@@ -40,10 +40,10 @@ const services = [
   },
   {
     num: "06",
-    slug: "decorative-finishing-plasterwork",
-    title: "Decorative Finishing & Plasterwork",
-    desc: "Textured wall finishes, Venetian plaster, stucco, and ornamental plasterwork for spaces that want more than just paint.",
-    tags: ["Venetian Plaster", "Texture", "Ornamental", "Luxury Finish"],
+    slug: "paint-production",
+    title: "Paint Production",
+    desc: "Custom paint mixing and colour matching for residential, commercial, and industrial projects. The right colour, made from scratch.",
+    tags: ["Custom Mix", "Colour Match", "Bulk Supply", "Commercial"],
   },
 ];
 
@@ -108,7 +108,7 @@ export default function ProjectsPreview() {
           {services.map((s) => (
             <Link
               key={s.num}
-              href={`/projects/${s.slug}`}
+              href={"/projects/" + s.slug}
               className="group flex items-start gap-8 py-7 border-b border-black/[0.07] transition-colors duration-300 hover:bg-black/[0.015]"
             >
               <span
@@ -156,7 +156,7 @@ export default function ProjectsPreview() {
           </p>
           <Link
             href="/projects"
-            className="flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase font-light text-black/40 hover:text-black hover:gap-5 transition-all duration-300"
+            className="flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase font-light text-black/40 hover:text-black transition-all duration-300"
           >
             View all work →
           </Link>

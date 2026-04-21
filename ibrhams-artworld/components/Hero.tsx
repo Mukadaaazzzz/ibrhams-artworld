@@ -4,9 +4,9 @@ import Image from "next/image";
 import { useEffect, useState, useCallback } from "react";
 
 const slides = [
-  { src: "/hppp.jpg", alt: "Hero 1" },
-  { src: "/2.jpg",   alt: "Hero 2" },
-  { src: "/090.jpg", alt: "Hero 3" },
+  { src: "/c.jpg", alt: "Hero 1" },
+  { src: "/hppp.jpg",   alt: "Hero 2" },
+  { src: "/i.jpg", alt: "Hero 3" },
 ];
 
 const DURATION = 6000;

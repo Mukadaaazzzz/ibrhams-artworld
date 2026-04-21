@@ -7,7 +7,6 @@ export default function ProjectsPage() {
       className="relative min-h-screen bg-white overflow-hidden"
       style={{ fontFamily: "'Jost', sans-serif" }}
     >
-      {/* BG SVG */}
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none"
         xmlns="http://www.w3.org/2000/svg"
@@ -28,10 +27,10 @@ export default function ProjectsPage() {
 
       <div className="relative max-w-[960px] mx-auto px-10 pt-40 pb-32">
 
-        {/* Header */}
         <p className="text-[10px] tracking-[0.35em] uppercase text-black/35 font-light mb-6">
           All Work
         </p>
+
         <h1
           className="font-light leading-[1.0] text-black mb-6"
           style={{
@@ -42,18 +41,18 @@ export default function ProjectsPage() {
           Every project is<br />
           <em className="italic text-black/30">a conversation with a surface.</em>
         </h1>
+
         <p className="text-[14px] font-light text-black/50 leading-relaxed max-w-[520px] mb-20">
           Six disciplines. One consistent belief — that art applied with intention
           transforms not just walls, but the way people feel inside a space.
           Browse the work below, or click through to read the full story of each.
         </p>
 
-        {/* Project list */}
         <div className="border-t border-black/[0.08]">
           {projects.map((p) => (
             <Link
               key={p.slug}
-              href={`/projects/${p.slug}`}
+              href={"/projects/" + p.slug}
               className="group flex items-start gap-8 py-8 border-b border-black/[0.07] transition-colors duration-300 hover:bg-black/[0.018]"
             >
               <span
@@ -85,7 +84,7 @@ export default function ProjectsPage() {
                   className="text-[12px] font-light italic text-black/30"
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
-                  "{p.tagline}"
+                  &ldquo;{p.tagline}&rdquo;
                 </p>
                 <div className="flex flex-wrap gap-1.5 mt-3">
                   {p.tags.slice(0, 4).map((t) => (
@@ -111,7 +110,6 @@ export default function ProjectsPage() {
           ))}
         </div>
 
-        {/* Footer note */}
         <p className="mt-16 text-[11px] tracking-[0.2em] uppercase text-black/25 font-light text-center">
           All work is original. All commissions are open.
         </p>

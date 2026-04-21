@@ -14,27 +14,8 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "wall-murals",
-    num: "01",
-    category: "Public Art",
-    title: "Wall Murals",
-    tagline: "Architecture is the canvas. The wall is just where it begins.",
-    description:
-      "Large-scale hand-painted murals for homes, businesses, estates, and public spaces — interior and exterior. Every mural starts with a conversation about the space, the people who inhabit it, and what it should feel like to walk past.",
-    body: [
-      "A mural is not decoration. It is a declaration — of identity, of culture, of the kind of space someone wants to inhabit. Ibrahim Abubakar approaches every wall commission with that weight in mind.",
-      "Working across interior and exterior surfaces, from intimate bedroom feature walls to sprawling 40-metre public facades, each project begins with deep listening. What does this space mean to you? What do you want people to feel when they see it? What story has never been told here?",
-      "The execution is always hand-painted — never printed, never projected and traced. Every brushstroke is deliberate. Styles range from hyper-detailed figurative work to bold geometric abstraction, from Afrocentric pattern-work rooted in Yoruba textile tradition to contemporary street-art influenced compositions.",
-      "Materials are selected for longevity. Exterior murals are finished with UV-resistant sealants engineered to hold colour in Lagos heat and humidity. Interior pieces are treated for cleanability. The work is built to last decades.",
-    ],
-    tags: ["Interior", "Exterior", "Commercial", "Residential", "Public Art"],
-    year: "2019 — Present",
-    location: "Lagos, Nigeria",
-    medium: "Acrylic, Enamel, Spray",
-  },
-  {
     slug: "portrait-painting",
-    num: "02",
+    num: "01",
     category: "Fine Art",
     title: "Portrait Painting",
     tagline: "Not just a likeness. A record of someone alive.",
@@ -53,7 +34,7 @@ export const projects: Project[] = [
   },
   {
     slug: "interior-art-direction",
-    num: "03",
+    num: "02",
     category: "Interior",
     title: "Interior Art Direction",
     tagline: "A room without considered art is just a room.",
@@ -72,7 +53,7 @@ export const projects: Project[] = [
   },
   {
     slug: "exterior-facade-work",
-    num: "04",
+    num: "03",
     category: "Exterior",
     title: "Exterior & Facade Work",
     tagline: "The outside of a building is its first and loudest statement.",
@@ -88,6 +69,25 @@ export const projects: Project[] = [
     year: "2018 — Present",
     location: "Lagos, Nigeria",
     medium: "Enamel, Masonry Paint, Sealant",
+  },
+  {
+    slug: "decorative-finishing-plasterwork",
+    num: "04",
+    category: "Finishing",
+    title: "Decorative Finishing & Plasterwork",
+    tagline: "Texture is the thing paint alone cannot do.",
+    description:
+      "Venetian plaster, textured wall finishes, stucco, and ornamental plasterwork for spaces that want depth, warmth, and materiality beyond a painted surface.",
+    body: [
+      "Paint gives colour. Plaster gives presence. There is a tactile richness to a well-executed Venetian plaster finish or a hand-sculpted plaster detail that no painted wall — however beautifully coloured — can replicate.",
+      "Ibrahim's decorative finishing work covers the full range: Venetian plaster in its traditional polished form and in contemporary matte and satin interpretations, textured finishes using aggregates and speciality compounds, lime wash for organic aged effects, and ornamental plasterwork for cornices, ceiling roses, feature niches, and architectural details.",
+      "This service pairs naturally with the interior art direction offering — together they allow a space to be designed from the surface out, with every wall, ceiling, and architectural element considered as part of a unified composition.",
+      "Work is available for residential and commercial projects. All plasterwork is applied by hand. No spray, no shortcuts.",
+    ],
+    tags: ["Venetian Plaster", "Texture", "Lime Wash", "Ornamental", "Luxury"],
+    year: "2019 — Present",
+    location: "Lagos, Nigeria",
+    medium: "Plaster, Lime, Aggregate",
   },
   {
     slug: "digital-illustration-design",
@@ -109,23 +109,23 @@ export const projects: Project[] = [
     medium: "Digital (Procreate, Illustrator)",
   },
   {
-    slug: "decorative-finishing-plasterwork",
+    slug: "paint-production",
     num: "06",
-    category: "Finishing",
-    title: "Decorative Finishing & Plasterwork",
-    tagline: "Texture is the thing paint alone cannot do.",
+    category: "Production",
+    title: "Paint Production",
+    tagline: "The right colour, made from scratch.",
     description:
-      "Venetian plaster, textured wall finishes, stucco, and ornamental plasterwork for spaces that want depth, warmth, and materiality beyond a painted surface.",
+      "Custom paint mixing and production for residential, commercial, and industrial projects. Exact colour matching, bulk formulation, and specialty finishes unavailable off the shelf.",
     body: [
-      "Paint gives colour. Plaster gives presence. There is a tactile richness to a well-executed Venetian plaster finish or a hand-sculpted plaster detail that no painted wall — however beautifully coloured — can replicate.",
-      "Ibrahim's decorative finishing work covers the full range: Venetian plaster in its traditional polished form and in contemporary matte and satin interpretations, textured finishes using aggregates and speciality compounds, lime wash for organic aged effects, and ornamental plasterwork for cornices, ceiling roses, feature niches, and architectural details.",
-      "This service pairs naturally with the interior art direction offering — together they allow a space to be designed from the surface out, with every wall, ceiling, and architectural element considered as part of a unified composition.",
-      "Work is available for residential and commercial projects. All plasterwork is applied by hand. No spray, no shortcuts.",
+      "Most people settle for what is available in the tin. Ibrahim doesn't. The paint production service exists because the right colour — the exact right colour — is not always sitting on a shelf at a hardware store.",
+      "The service covers custom colour matching from any reference (fabric, material sample, Pantone, RAL, or photograph), small and large batch mixing for residential and commercial projects, and specialty formulations including anti-mould, waterproofing additives, and textured compounds.",
+      "For large exterior or commercial projects, this means consistent colour across every litre — no batch variation, no surprises halfway up a building. For interior clients, it means the specific warm cream or the precise terracotta that the standard range never quite nails.",
+      "Paint production is also available as a standalone supply service for contractors, designers, and developers who need reliable custom colour at scale. Formulations are documented and replicable for future touch-ups.",
     ],
-    tags: ["Venetian Plaster", "Texture", "Lime Wash", "Ornamental", "Luxury"],
-    year: "2019 — Present",
+    tags: ["Custom Mix", "Colour Match", "Bulk Supply", "Specialty Finish", "Commercial"],
+    year: "2021 — Present",
     location: "Lagos, Nigeria",
-    medium: "Plaster, Lime, Aggregate",
+    medium: "Acrylic, Oil-Based, Specialty",
   },
 ];
 
