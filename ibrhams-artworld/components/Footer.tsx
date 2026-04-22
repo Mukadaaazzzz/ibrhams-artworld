@@ -269,18 +269,7 @@ export default function Footer() {
             </div>
 
             {/* CTA */}
-            <Link
-              href="/#contact"
-              className="inline-flex items-center gap-2 mt-8 px-5 py-2.5 text-[10px] uppercase tracking-[0.18em] font-light transition-all duration-300 hover:gap-3"
-              style={{
-                color: gold,
-                border: "1px solid rgba(201,168,76,0.3)",
-                background: "rgba(201,168,76,0.04)",
-                textDecoration: "none",
-              }}
-            >
-              Start a project →
-            </Link>
+            
           </div>
         </div>
 

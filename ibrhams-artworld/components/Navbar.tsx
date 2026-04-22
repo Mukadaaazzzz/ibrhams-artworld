@@ -80,7 +80,7 @@ export default function Navbar() {
           <Link
             href="/#contact"
             onClick={(e) => handleLinkClick(e, "/#contact")}
-            className="relative text-[11px] tracking-[0.2em] uppercase font-light px-5 py-2 border border-black/20 hover:border-black hover:bg-black hover:text-white transition-all duration-300"
+            className="relative text-[11px] tracking-[0.2em] uppercase font-light px-5 py-2 border border-black/20 hover:border-black hover:bg-black hover:text-black transition-all duration-300"
           >
             Get in Touch
           </Link>

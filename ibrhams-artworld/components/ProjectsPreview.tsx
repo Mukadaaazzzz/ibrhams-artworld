@@ -5,7 +5,7 @@ import Link from "next/link";
 const services = [
   {
     num: "01",
-    slug: "portrait-painting",
+    slug: "art-portraiture",
     title: "Art & Portraiture",
     desc: "Custom portraits, original paintings, and commissioned artwork — individuals, families, pets, or abstract compositions. Oil, acrylic, charcoal, or mixed media.",
     tags: ["Oil Painting", "Acrylic", "Charcoal", "Mixed Media", "Commission"],
