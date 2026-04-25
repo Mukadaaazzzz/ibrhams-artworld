@@ -203,14 +203,18 @@ export default function GalleryPage() {
         <p className="text-[10px] tracking-[0.35em] uppercase text-black/28 font-light mb-4">
           Portfolio
         </p>
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 mb-16 group"
-          style={{ color: "rgba(0,0,0,0.35)" }}
-        >
-          <span className="transition-transform duration-300 group-hover:-translate-x-1">←</span>
-          <span className="text-[10px] uppercase tracking-[0.22em] font-light">Back to home</span>
-        </Link>
+       <Link
+  href="/"
+  className="inline-flex items-center justify-center gap-2 px-4 py-2 mb-16 group hover:bg-black/5 transition-all duration-300"
+  style={{ 
+    color: "#000000",
+    border: "1px solid rgba(0,0,0,0.15)",
+    textDecoration: "none"
+  }}
+>
+  <span className="transition-transform duration-300 group-hover:-translate-x-1">←</span>
+  <span className="text-[10px] uppercase tracking-[0.22em] font-light">Back to home</span>
+</Link>
         <h1
           className="font-light leading-none text-black mb-12"
           style={{

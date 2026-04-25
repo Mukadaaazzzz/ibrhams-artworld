@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { featuredItems, type GalleryItem } from "@/app/lib/gallery";
+
 function LightboxModal({
   item,
   onClose,
@@ -77,7 +78,8 @@ export default function GalleryPreview() {
         {/* Header */}
         <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
           <div>
-            <p className="text-[10px] tracking-[0.35em] uppercase text-black/28 font-light mb-3">
+            <p className="text-[10px] tracking-[0.35em] uppercase font-light mb-3"
+              style={{ color: "rgba(0,0,0,0.35)" }}>
               The work
             </p>
             <h2
@@ -89,60 +91,111 @@ export default function GalleryPreview() {
             >
               Selected pieces
               <br />
-              <em className="italic text-black/28">from the portfolio.</em>
+              <em className="italic" style={{ color: "rgba(0,0,0,0.28)" }}>
+                from the portfolio.
+              </em>
             </h2>
           </div>
+
+          {/* Top CTA — dark and clickable */}
           <Link
             href="/gallery"
-            className="text-[10px] tracking-[0.22em] uppercase font-light text-black/40 hover:text-black transition-colors duration-300 shrink-0"
+            className="group inline-flex items-center gap-3 px-6 py-3 text-[11px] tracking-[0.2em] uppercase font-light text-white transition-all duration-300 hover:gap-4 shrink-0"
+            style={{ background: "#111" }}
           >
-            View all work →
+            View all work
+            <span className="transition-transform duration-300 group-hover:translate-x-1">
+              &#8594;
+            </span>
           </Link>
         </div>
 
-        {/* Grid — 4 cols desktop, 2 mobile */}
-<div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-black/[0.06]">
-  {featuredItems.map((item, i) => (
-    <button
-      key={item.src}
-      onClick={() => setActive(item)}
-      className="group relative overflow-hidden bg-black/[0.02] cursor-pointer"
-      style={{ aspectRatio: "1/1" }}
-    >
-      <Image
-        src={item.src}
-        alt={item.label}
-        fill
-        className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
-        sizes="(max-width: 768px) 50vw, 25vw"
-      />
-      <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"
-        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55), transparent)" }}
-      >
-        <p
-          className="text-white uppercase tracking-widest font-light"
-          style={{ fontSize: "9px" }}
+        {/* Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-black/[0.06]">
+          {featuredItems.map((item, i) => (
+            <button
+              key={item.src}
+              onClick={() => setActive(item)}
+              className="group relative overflow-hidden cursor-pointer"
+              style={{ aspectRatio: "1/1", background: "#f0ece8" }}
+            >
+              <Image
+                src={item.src}
+                alt={item.label}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                sizes="(max-width: 768px) 50vw, 25vw"
+                priority={i < 4}
+                loading={i < 4 ? undefined : "lazy"}
+              />
+              {/* Hover overlay */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-start justify-end p-4"
+                style={{ background: "linear-gradient(to top, rgba(0,0,0,0.65), transparent)" }}
+              >
+                <p
+                  className="text-white uppercase tracking-widest font-light mb-1"
+                  style={{ fontSize: "9px" }}
+                >
+                  {item.label}
+                </p>
+                <p
+                  className="text-white/60 uppercase font-light"
+                  style={{ fontSize: "8px", letterSpacing: ".15em" }}
+                >
+                  Click to view
+                </p>
+              </div>
+
+              {/* Corner plus icon */}
+              <div
+                className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-100 scale-75"
+                style={{ background: "rgba(255,255,255,0.15)", backdropFilter: "blur(4px)" }}
+              >
+                <span className="text-white font-light" style={{ fontSize: "14px" }}>+</span>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        {/* Footer CTA — the main lure */}
+        <div
+          className="mt-px p-8 flex flex-col md:flex-row items-center justify-between gap-6"
+          style={{ background: "#111" }}
         >
-          {item.label}
-        </p>
-      </div>
-    </button>
-  ))}
-</div>
+          <div>
+            <p
+              className="font-light text-white mb-1"
+              style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(20px, 2.5vw, 28px)" }}
+            >
+              85 pieces. 4 disciplines.
+            </p>
+            <p
+              className="font-light"
+              style={{ fontSize: "12px", color: "rgba(255,255,255,0.38)" }}
+            >
+              Interior &nbsp;&middot;&nbsp; Exterior &nbsp;&middot;&nbsp; Murals &nbsp;&middot;&nbsp; Portrait
+            </p>
+          </div>
 
-        {/* Footer */}
-        <div className="mt-10 flex items-center justify-between flex-wrap gap-4">
-          <p className="text-[11px] tracking-[0.2em] uppercase text-black/25 font-light">
-            85 pieces across 4 disciplines
-          </p>
           <Link
             href="/gallery"
-            className="inline-flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase font-light text-black/40 hover:text-black hover:gap-5 transition-all duration-300"
+            className="group inline-flex items-center gap-4 px-8 py-4 uppercase font-light transition-all duration-300 hover:gap-6 shrink-0"
+            style={{
+              fontSize: "11px",
+              letterSpacing: ".2em",
+              color: "#C9A84C",
+              border: "1px solid rgba(201,168,76,0.4)",
+              background: "rgba(201,168,76,0.05)",
+            }}
           >
-            Explore the full gallery →
+            Explore the full gallery
+            <span className="transition-transform duration-300 group-hover:translate-x-1">
+              &#8594;
+            </span>
           </Link>
         </div>
+
       </div>
 
       {/* Lightbox */}
